@@ -13,6 +13,15 @@ app.use(express.static('public'));
 
 app.locals.title = 'swatches';
 
+app.use('*',( req ,res, next) => {
+  if(req.headers['x-forwarded-proto']!='https' && environment === 'production'){
+    res.redirect('https://swatch-saver.herokuapp.com'+req.url)
+  }
+  else {
+    next()
+  } 
+})
+
 app.get('/api/v1/palettes', (req, res) => {
   database('palettes').select()
     .then(palettes => {
