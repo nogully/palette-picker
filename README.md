@@ -1,6 +1,6 @@
-# Swatches
-
 [![Build Status](https://travis-ci.org/nogully/palette-picker.svg?branch=master)](https://travis-ci.org/nogully/palette-picker)
+
+# Swatches
 
 An app that creates and saves color palettes (coolors.co clone)
 
